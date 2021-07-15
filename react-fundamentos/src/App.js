@@ -7,12 +7,15 @@ function App() {
 	const [posts,setPosts] = useState([
 		{
 			id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10,
+			read: false
 		},
 		{
 			id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 20,
+			read: true
 		},
 		{
 			id: Math.random(), title: 'Title#03', subtitle: 'Sub#03', likes: 30,
+			read: false
 		},
 	]);
 	function handleRefresh() {
@@ -47,8 +50,7 @@ function App() {
 				<Post
 					key={post.title}
 					likes={post.likes}
-					post={{ id:post.id,title: post.title,subtitle: post.subtitle,
-					}}
+					post={post}
 					onRemove = {handleRemove}
 				/>
 			))}
