@@ -12,6 +12,7 @@ function Post(props){
 						title : props.post.title,
 						read : props.post.read
 					}}
+
 				/>
 				<small>{props.post.subtitle}</small>
 				<span>Likes : {props.post.likes}</span>
@@ -22,13 +23,14 @@ function Post(props){
 }
 
 Post.propTypes = {
-	
+
 	post : PropTypes.shape({
 		id : PropTypes.number.isRequired,
 		title : PropTypes.string.isRequired,
 		subtitle : PropTypes.string.isRequired,
 		likes : PropTypes.number.isRequired,
-		read : PropTypes.bool.isRequired
+		read : PropTypes.bool.isRequired,
+		
 		
 	}),
 	onRemove : PropTypes.func.isRequired,

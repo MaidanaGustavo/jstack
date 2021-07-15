@@ -2,8 +2,10 @@ import React,{ useState } from 'react';
 import Post from './Post';
 import Header from './Header';
 
-
+import { ThemeProvider } from './ThemeContext';
 function App() {
+
+
 	const [posts,setPosts] = useState([
 		{
 			id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10,
@@ -29,6 +31,7 @@ function App() {
 			},
 		]);
 	}
+	
 
 	function handleRemove(postId){
 		setPosts((prevState) =>(
@@ -38,9 +41,11 @@ function App() {
 		));
 	}
 	return (
-		<>
+		<ThemeProvider>
 			<Header
+				
 				title="JStack!!"
+						
 			>
 				<h2>Alo ambev!!</h2>
 				<button onClick={handleRefresh}>Atualizar</button>
@@ -52,10 +57,11 @@ function App() {
 					likes={post.likes}
 					post={post}
 					onRemove = {handleRemove}
+		
 				/>
 			))}
 
-		</>
+		</ThemeProvider>
 
 	);
 }
